@@ -1,0 +1,31 @@
+<%= form_with model: @builder, local: true do |f| %>
+
+<%= render 'shared/error_messages', model: f.object %>
+  <div class="field">
+    <%= f.label :title, "タイトル" %><br />
+    <%= f.text_field :title, id:"builder_title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, "説明" %><br />
+    <%= f.text_area :description, class: :form__text, id:"builder_description" %>
+  </div>
+
+ <div class="field">
+   <%= f.label :category_id, "カテゴリ" %><br />
+   <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+
+  <div class="field">
+    <%= f.label :place, "よく行く競馬場" %><br />
+    <%= f.text_field :place, class: :form__text, id:"builder_place" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "投稿画像" %><br />
+    <%= f.file_field :image, id:"builder_image" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "投稿!!", class: :form__btn  %>
+  </div>
+<% end %>

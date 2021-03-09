@@ -7,4 +7,6 @@ class User < ApplicationRecord
   validates :name,   presence:true
   validates :profile,presence:true
   validates :history,presence:true
+
+  has_many :builders
 end
