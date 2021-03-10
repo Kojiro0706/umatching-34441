@@ -1,4 +1,5 @@
 class BuildersController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @builders = Builder.all.includes(:user)
   end
@@ -15,7 +16,9 @@ class BuildersController < ApplicationController
        render :new
     end
   end
-  
+  def show
+    @builder= Builder.find(params[:id])
+  end
   private
   def builder_params
     params.require(:builder).permit(:title,:description,:category_id,:place,:image).merge(user_id: current_user.id)
