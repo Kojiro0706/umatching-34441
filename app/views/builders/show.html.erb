@@ -7,7 +7,7 @@
       <%= link_to @builder.user.name, root_path, class: :builder__user %>
       <% if @builder.user.id == current_user.id%>
         <div class="builder__manage">
-          <%= link_to "編集する", root_path, class: :builder__btn %>
+          <%= link_to "編集する", edit_builder_path(@builder.id), class: :builder__btn %>
           <%= link_to "削除する", root_path, class: :builder__btn %>
         </div>
       <% end %>
