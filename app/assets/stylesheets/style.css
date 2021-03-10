@@ -188,7 +188,7 @@ a {
   flex-direction: column;
   margin-bottom: 8px;
 }
-.builder__title{
+.detail__title{
   font-size: 20px;
   font-weight: bold;
 }
