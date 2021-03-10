@@ -1,34 +1,34 @@
 <main class="main">
   <div class="inner">
-    <div class="prototype__wrapper">
-      <p class="prototype__hedding">
+    <div class="builder__wrapper">
+      <p class="builder__hedding">
         <%= @builder.title%>
       </p>
-      <%= link_to @builder.user.name, root_path, class: :prototype__user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-        <div class="prototype__manage">
-          <%= link_to "編集する", root_path, class: :prototype__btn %>
-          <%= link_to "削除する", root_path, class: :prototype__btn %>
+      <%= link_to @builder.user.name, root_path, class: :builder__user %>
+      <% if @builder.user.id == current_user.id%>
+        <div class="builder__manage">
+          <%= link_to "編集する", root_path, class: :builder__btn %>
+          <%= link_to "削除する", root_path, class: :builder__btn %>
         </div>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
-      <div class="prototype__image">
+      <% end %>
+      <div class="builder__image">
         <%= image_tag @builder.image %>
       </div>
-      <div class="prototype__body">
-        <div class="prototype__detail">
+      <div class="builder__body">
+        <div class="builder__detail">
           <p class="detail__title">説明</p>
           <p class="detail__message">
             <%= @builder.description %>
           </p>
         </div>
-        <div class="prototype__detail">
+        <div class="builder__detail">
           <p class="detail__title">競馬場(お気に入り)</p>
           <p class="detail__message">
             <%= @builder.place %>
           </p>
         </div>
       </div>
-      <div class="prototype__comments">
+      <div class="builder__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
           <%# <%= form_with model: モデル名,local: true do |f|%>
             <div class="field">
