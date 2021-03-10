@@ -8,7 +8,7 @@
       <% if @builder.user.id == current_user.id%>
         <div class="builder__manage">
           <%= link_to "編集する", edit_builder_path(@builder.id), class: :builder__btn %>
-          <%= link_to "削除する", root_path, class: :builder__btn %>
+          <%= link_to "削除する", builder_path(@builder.id),method: :delete, class: :builder__btn %>
         </div>
       <% end %>
       <div class="builder__image">
