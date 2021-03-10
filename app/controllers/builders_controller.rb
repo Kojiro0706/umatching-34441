@@ -32,6 +32,12 @@ class BuildersController < ApplicationController
        render :edit
     end
   end
+
+  def destroy
+    @builder= Builder.find(params[:id])
+    @builder.destroy
+    redirect_to root_path
+  end
   private
   def builder_params
     params.require(:builder).permit(:title,:description,:category_id,:place,:image).merge(user_id: current_user.id)
