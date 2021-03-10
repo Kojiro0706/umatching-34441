@@ -1,0 +1,54 @@
+<main class="main">
+  <div class="inner">
+    <div class="builder__wrapper">
+      <p class="builder__hedding">
+        <%= @builder.title%>
+      </p>
+      <%= link_to @builder.user.name, root_path, class: :builder__user %>
+      <% if @builder.user.id == current_user.id%>
+        <div class="builder__manage">
+          <%= link_to "編集する", root_path, class: :builder__btn %>
+          <%= link_to "削除する", root_path, class: :builder__btn %>
+        </div>
+      <% end %>
+      <div class="builder__image">
+        <%= image_tag @builder.image %>
+      </div>
+      <div class="builder__body">
+        <div class="builder__detail">
+          <p class="detail__title">説明</p>
+          <p class="detail__message">
+            <%= @builder.description %>
+          </p>
+        </div>
+        <div class="builder__detail">
+          <p class="detail__title">競馬場(お気に入り)</p>
+          <p class="detail__message">
+            <%= @builder.place %>
+          </p>
+        </div>
+      </div>
+      <div class="builder__comments">
+        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+          <%# <%= form_with model: モデル名,local: true do |f|%>
+            <div class="field">
+              <%# <%= f.label :hoge, "コメント" %><br />
+              <%# <%= f.text_field :hoge, id:"comment_text" %>
+            </div>
+            <div class="actions">
+              <%# <%= f.submit "送信する", class: :form__btn  %>
+            </div>
+          <%# <% end %> 
+        <%# // ログインしているユーザーには上記を表示する %>
+        <ul class="comments_lists">
+          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+            <li class="comments_list">
+              <%# <%= " コメントのテキスト "%>
+              <%# <%= link_to "（ ユーザー名 ）", root_path, class: :comment_user %>
+            </li>
+          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
