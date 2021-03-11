@@ -19,6 +19,7 @@ class BuildersController < ApplicationController
 
   def show
     @builder= Builder.find(params[:id])
+    @comment=Comment.new
   end
 
   def edit
