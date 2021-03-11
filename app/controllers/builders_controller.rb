@@ -16,6 +16,7 @@ class BuildersController < ApplicationController
        render :new
     end
   end
+
   def show
     @builder= Builder.find(params[:id])
   end
