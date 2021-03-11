@@ -4,10 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name,   presence:true
-  validates :profile,presence:true
-  validates :history,presence:true
-
+  with_options presence: true do
+  validates :name
+  validates :profile
+  validates :history
+  validates :password, format: { with: /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{6,}\z/ }
+  end
   has_many :builders
   has_many :comments, dependent: :destroy
 end
