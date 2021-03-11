@@ -9,4 +9,5 @@ class User < ApplicationRecord
   validates :history,presence:true
 
   has_many :builders
+  has_many :comments, dependent: :destroy
 end
