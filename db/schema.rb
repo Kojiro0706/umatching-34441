@@ -47,10 +47,10 @@ ActiveRecord::Schema.define(version: 2021_03_11_024329) do
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
     t.bigint "user_id"
-    t.bigint "builders_id"
+    t.bigint "builder_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["builders_id"], name: "index_comments_on_builders_id"
+    t.index ["builder_id"], name: "index_comments_on_builder_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -72,6 +72,6 @@ ActiveRecord::Schema.define(version: 2021_03_11_024329) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "builders", "users"
-  add_foreign_key "comments", "builders", column: "builders_id"
+  add_foreign_key "comments", "builders"
   add_foreign_key "comments", "users"
 end

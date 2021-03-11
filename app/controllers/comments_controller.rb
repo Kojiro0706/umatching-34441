@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   def create
-    @builder = Builder..find(params[:builder_id])
+    @builder = Builder.find(params[:builder_id])
     @comment = Comment.new(comment_params)
-    if comment.save
+    if @comment.save
       redirect_to "/builders/#{@comment.builder.id}"
     else
       @builders = @comment.builder
@@ -13,6 +13,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:text).merge(user_id: current_user.id, prototype_id: params[:prototype_id])
+    params.require(:comment).permit(:text).merge(user_id: current_user.id, builder_id: params[:builder_id])
   end
 end
