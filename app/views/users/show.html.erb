@@ -2,33 +2,33 @@
   <div class="inner">
     <div class="user__wrapper">
       <h2 class="page-heading">
-        <%= "ユーザー名さんの情報"%>
+        <%= "#{@user.name}の情報"%>
       </h2>
       <table class="table">
         <tbody>
           <tr>
             <th class="table__col1">名前</th>
-            <td class="table__col2"><%= "ユーザー名" %></td>
+            <td class="table__col2"><%= @user.name %></td>
           </tr>
           <tr>
             <th class="table__col1">プロフィール</th>
-            <td class="table__col2"><%= "ユーザーのプロフィール" %></td>
+            <td class="table__col2"><%= @user.profile%></td>
           </tr>
           <tr>
-            <th class="table__col1">所属</th>
-            <td class="table__col2"><%= "ユーザーの所属" %></td>
+            <th class="table__col1">馬女歴</th>
+            <td class="table__col2"><%= @user.history%>年生</td>
           </tr>
           <tr>
-            <th class="table__col1">役職</th>
-            <td class="table__col2"><%= "ユーザーの役職" %></td>
+            <th class="table__col1">好きな競走馬</th>
+            <td class="table__col2"><%= @user.horse %></td>
           </tr>
         </tbody>
       </table>
       <h2 class="page-heading">
-        <%= "ユーザー名さんのプロトタイプ"%>
+        <%="#{@user.name}の投稿一覧"%>
       </h2>
       <div class="user__card">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
+        <%=render partial: "builders/builder",collection: @builders %>
       </div>
     </div>
   </div>
