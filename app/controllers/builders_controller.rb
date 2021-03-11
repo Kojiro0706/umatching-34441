@@ -1,23 +1,26 @@
 class BuildersController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
-    @builders = Builder.all.includes(:user)
+    @builders= Builder.all.includes(:user)
   end
 
   def new
-    @builder =Builder.new
+    @builder= Builder.new
   end
 
   def create
-    @builder =Builder.new(builder_params)
+    @builder= Builder.new(builder_params)
     if @builder.save
        redirect_to root_path
     else
        render :new
     end
   end
+
   def show
     @builder= Builder.find(params[:id])
+    @comment= Comment.new
+    @comments= @builder.comments.includes(:user)
   end
 
   def edit
