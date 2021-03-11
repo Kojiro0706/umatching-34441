@@ -4,7 +4,7 @@
       <p class="builder__hedding">
         <%= @builder.title%>
       </p>
-      <%= link_to @builder.user.name, root_path, class: :builder__user %>
+      <%= link_to @builder.user.name, user_path(@builder.user), class: :builder__user %>
       <% if @builder.user.id == current_user.id%>
         <div class="builder__manage">
           <%= link_to "編集する", edit_builder_path(@builder.id), class: :builder__btn %>
@@ -44,7 +44,7 @@
           <% @comments.each do |comment| %>
             <li class="comments_list">
               <%= comment.text%>
-              <%= link_to comment.user.name, root_path, class: :comment_user %>
+              <%= link_to comment.user.name, user_path(@builder.user), class: :comment_user %>
             </li>
           <% end %>
         </ul>
