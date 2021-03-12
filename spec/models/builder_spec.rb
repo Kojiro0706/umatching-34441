@@ -15,7 +15,7 @@ RSpec.describe Builder, type: :model do
         expect(@builder).to be_valid
       end
     end
-    context '投稿情報の登録が上手くいくとき' do
+    context '投稿情報の登録が上手くいかないとき' do
       it '投稿画像が空だと登録できないこと' do
         @builder.image= nil
         @builder.valid?
