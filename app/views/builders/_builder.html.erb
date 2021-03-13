@@ -1,10 +1,10 @@
 <div class="card">
-  <%= link_to image_tag(builder.image, class: :card__img ), builder_path(builder.id)%>
+  <%= link_to image_tag(builder.image),builder_path(builder.id),class: :card__img %>
   <div class="card__body">
     <%= link_to builder.title, builder_path(builder.id), class: :card__title%>
     <p class="card__summary">
       <%="Category:#{builder.category.name} "%>
     </p>
-    <%= link_to "by #{builder.user.name}", root_path , class: :card__user %>
+    <%= link_to "by #{builder.user.name}", user_path(builder.user), class: :card__user %>
   </div>
 </div>

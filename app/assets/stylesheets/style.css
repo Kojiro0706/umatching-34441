@@ -36,11 +36,12 @@ a {
 
 /* ヘッダー */
 
+.main{
+  background-color: #f6f6f6
+}
 .header {
-  background-color: #f1f8fe;
-  margin-bottom: 48px;
-  padding: 20px 0;
-
+  background-color: #e2e2e2;
+  padding: 20px 0 40px 0;
 }
 .inner {
   width: 1024px;
@@ -50,6 +51,7 @@ a {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-bottom:10px;
 }
 .logo {
   width: 200px;
@@ -58,16 +60,16 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color:  #3b4043;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px  #3b4043 solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 .nav__btn:hover{
   color: #fff;
-  background: #87CEFA;
+  background:  #3b4043;
 }
 
 .nav__logout{
@@ -80,6 +82,10 @@ a {
 }
 .nav__logout:hover{
   opacity: 0.5;
+}
+.horse1{
+  width: 100%;
+  height: 300px;
 }
 
 /* フォーム周り */
@@ -106,8 +112,8 @@ a {
   color: #fff;
   text-decoration: none;
   user-select: none;
-  background: #87CEFA;
-  border: 1px #87CEFA solid;
+  background: #3b4043;
+  border: 1px #3b4043 solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
@@ -143,6 +149,10 @@ a {
 }
 .card__img {
   margin-bottom: 16px;
+}
+.card__img img{
+  border-radius: 130px;
+  height: 260px;
 }
 .card__title {
   display: block;
@@ -215,7 +225,7 @@ a {
 }
 
 .builder__comments{
-  background-color: #f6f6f6;
+  background-color: #e8e8e8;
   padding: 20px;
   margin: 28px 0 40px 0;
 }
@@ -231,7 +241,7 @@ a {
 
 .comment_user{
   font-size: 16px;
-  color: #999;
+  color: #464646;
   text-decoration: underline;
 }
 
@@ -314,10 +324,11 @@ a {
   .card__summary {
     font-size: 14px;
   }
-  .prototype_image{
+  .builder_image{
     width: 100%;
   }
   .table{
     width: 100%;
   }
+
 }

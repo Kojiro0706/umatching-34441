@@ -15,20 +15,21 @@
       <div class="inner">
         <div class="nav">
           <div class="nav__left">
-            <%= link_to image_tag("logo.png", class: :logo), root_path %>
+            <%= link_to image_tag("horse.logo.jpg", class: :logo), root_path %>
           </div>
           <%if user_signed_in?%>
             <div class="nav__right"> 
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-              <%= link_to "投稿ボタン", new_builder_path, class: :nav__btn %>
+              <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: :nav__btn %>
+              <%= link_to "POST", new_builder_path, class: :nav__btn %>
             </div> 
           <%else%>
             <div class="nav__right">
-              <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
-              <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+              <%= link_to "LOGIN", new_user_session_path, class: :nav__btn %>
+              <%= link_to "SIGN UP", new_user_registration_path, class: :nav__btn %>
             </div>
           <%end%>
         </div>
+        <%= link_to image_tag("horse1.png",class: :horse1) %>
       </div>
     </header>
     <%= yield %>

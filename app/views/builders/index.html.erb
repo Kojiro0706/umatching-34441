@@ -1,5 +1,15 @@
 <main class="main">
   <div class="inner">
+  <h2>
+  検索/SEARCH
+</h2>
+<%= search_form_for @q, url: builders_search_path do |f| %>
+  <%= f.radio_button :category_id_eq,'',{:checked=>true} %>指定なし
+  <%= f.radio_button :category_id_eq,'2'%>雑談
+  <%= f.radio_button :category_id_eq,'3'%>マッチング
+  <%= f.radio_button :category_id_eq,'4'%>競馬予想
+  <%= f.submit '検索' %>
+<% end %>
     <%if user_signed_in? %>
       <div class="greeting">
         <%= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>

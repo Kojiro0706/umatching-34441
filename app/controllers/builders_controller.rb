@@ -1,10 +1,11 @@
 class BuildersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_builder, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:index]
+  before_action :set_builder, except: [:index, :new, :create,:search]
   before_action :check_user, only:[:edit,:update,:destroy]
+  before_action :search_builder,only:[:index,:search]
 
   def index
-    @builders= Builder.all.includes(:user)
+    @builders= Builder.order(created_at: :desc).includes(:user)
   end
 
   def new
@@ -40,6 +41,10 @@ class BuildersController < ApplicationController
     @builder.destroy
     redirect_to root_path
   end
+
+  def search
+    @results=@q.result
+  end
   private
   def builder_params
     params.require(:builder).permit(:title,:description,:category_id,:place,:image).merge(user_id: current_user.id)
@@ -53,5 +58,9 @@ class BuildersController < ApplicationController
     if @builder.user_id != current_user.id
       redirect_to root_path
     end
+  end
+  
+  def search_builder
+    @q=Builder.ransack(params[:q])
   end
 end

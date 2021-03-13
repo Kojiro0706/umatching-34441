@@ -1,0 +1,36 @@
+<main class="main">
+  <div class="inner">
+    <%if user_signed_in? %>
+        <div class="greeting">
+          <%= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>
+          <%= "がログイン中です!!" %>
+        </div> 
+      <%end%>
+      <h1>
+        検索結果/SERACH RESULTS
+      </h1>
+      <%# 検索結果の個数で条件分岐 %>
+      <div class="card__wrapper">
+        <% if @results.length !=0 %>
+        <% @results.each do |result| %>
+          <div class="card">
+          <a class="card__img">
+            <%= image_tag(result.image)%></a>
+            <div class="card__body">
+            <a class="card__title">
+            <%=result.title%></a>
+            <p class="card__summary">
+              <%= "Category:#{result.category.name}"%>
+            </p>
+            <a class="card__user">
+              <%= result.user.name%></a>
+              </div>
+            </div>
+        <% end %>
+        <% else %>
+        該当する投稿はありません
+        <% end %>
+      </div>
+      <%= link_to 'トップページへ戻る', root_path %>
+  </div>
+</main>
