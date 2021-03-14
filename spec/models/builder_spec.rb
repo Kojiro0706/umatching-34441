@@ -19,27 +19,27 @@ RSpec.describe Builder, type: :model do
       it '投稿画像が空だと登録できないこと' do
         @builder.image= nil
         @builder.valid?
-        expect(@builder.errors.full_messages).to include("Image can't be blank")
+        expect(@builder.errors.full_messages).to include("画像を入力してください")
       end
       it 'タイトルが空だと登録できないこと' do
         @builder.title= ''
         @builder.valid?
-        expect(@builder.errors.full_messages).to include("Title can't be blank")
+        expect(@builder.errors.full_messages).to include("タイトルを入力してください")
       end
       it '投稿の説明が空だと登録できないこと' do
         @builder.description= ''
         @builder.valid?
-        expect(@builder.errors.full_messages).to include("Description can't be blank")
+        expect(@builder.errors.full_messages).to include("説明を入力してください")
       end
       it 'カテゴリーがID:1だと登録できないこと' do
         @builder.category_id= ''
         @builder.valid?
-        expect(@builder.errors.full_messages).to include("Category can't be blank")
+        expect(@builder.errors.full_messages).to include("カテゴリを入力してください")
       end
       it 'Userが紐付いてないと登録できないこと' do
         @builder.user= nil
         @builder.valid?
-        expect(@builder.errors.full_messages).to include("User must exist")
+        expect(@builder.errors.full_messages).to include("Userを入力してください")
       end
     end
   end
