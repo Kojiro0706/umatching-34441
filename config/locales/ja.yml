@@ -1,0 +1,12 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       name: 名前
+       profile: プロフィール
+       history: 馬女歴
+     builder:
+       title: タイトル
+       description: 説明
+       image: 画像
+       category_id: カテゴリ
