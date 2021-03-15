@@ -234,6 +234,8 @@ a {
 
 .comments_lists{
   padding-left: 20px;
+  height: 200px;
+  overflow: scroll;
 }
 
 .comments_list{
