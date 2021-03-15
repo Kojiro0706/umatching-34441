@@ -30,7 +30,7 @@
       </div>
       <div class="builder__comments">
         <%if user_signed_in?%>
-          <%= form_with model:[@builder,@comment],local: true do |f|%>
+          <%= form_with model:[@builder,@comment] do |f|%>
             <div class="field">
               <%= f.label :text, "コメント" %><br />
               <%= f.text_field :text, id:"comment_text" %>
@@ -40,8 +40,8 @@
             </div>
           <% end %> 
         <%end %>
-        <ul class="comments_lists">
-          <% @comments.each do |comment| %>
+        <ul class="comments_lists" id='comments' >
+          <% @comments.reverse_each do |comment| %>
             <li class="comments_list">
               <%= link_to comment.user.name, user_path(@builder.user), class: :comment_user %>
               <%= comment.text%>

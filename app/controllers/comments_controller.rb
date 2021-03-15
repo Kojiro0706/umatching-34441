@@ -2,8 +2,9 @@ class CommentsController < ApplicationController
   def create
     @builder = Builder.find(params[:builder_id])
     @comment = Comment.new(comment_params)
+    @user = User.find_by(id: current_user.id)
     if @comment.save
-      redirect_to "/builders/#{@comment.builder.id}"
+      ActionCable.server.broadcast 'comment_channel', content: @comment, user: @user
     else
       @builders = @comment.builder
       @comments = @builder.comments
