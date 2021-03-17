@@ -30,6 +30,29 @@
           <%end%>
         </div>
         <%= image_tag("horse1.png",class: :horse1) %>
+        <ul class="menu">
+        <li class="menu__single">
+            <a href="#" class="init-bottom">DATA BASE</a>
+            <ul class="menu__second-level">
+                <li><%= link_to '日本中央競馬会(JRA)', 'https://www.jra.go.jp/' %></li>
+                <li><%= link_to '地方競馬全国協会(NAR)', 'https://www.keiba.go.jp/' %></li>
+                <li><%= link_to 'netkeiba.com', 'https://www.netkeiba.com/' %></li>
+                <li><%= link_to '楽天競馬', 'https://keiba.rakuten.co.jp/' %></li>
+            </ul>
+        </li>
+        <li class="menu__single">
+            <a href="#" class="init-bottom">HORSE CLUB</a>
+            <ul class="menu__second-level">
+            <li><%= link_to 'シルクホースクラブ', 'https://www.silkhorseclub.jp/system/xb/silk_home.manage.Top' %></li>
+            <li><%= link_to 'キャロットクラブ', 'https://carrotclub.net/' %></li>
+            <li><%= link_to 'サンデーサラブレッドクラブ', 'https://www.sundaytc.co.jp/' %></li>
+            <li><%= link_to 'G1サラブレットクラブ', 'https://www.g1tc.co.jp/' %></li>
+            <li><%= link_to '社台サラブレットクラブ', 'https://www.shadaitc.co.jp/' %></li>
+            <li><%= link_to '東京サラブレッドクラブ', 'http://www.tokyo-tc.com/' %></li>
+            <li><%= link_to 'DMMバヌーシー', 'https://banusy.dmm.com/' %></li>
+            </ul>
+        </li>
+        </ul>
       </div>
     </header>
     <%= yield %>
