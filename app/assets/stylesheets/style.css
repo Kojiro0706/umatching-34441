@@ -395,6 +395,12 @@ li.menu__single:hover ul.menu__second-level {
   justify-content: space-between;
   align-items: center;
 }
+.user__information{
+  display:flex;
+}
+.user__image{
+  width:40%;
+}
 /* フッター */
 
 .footer {

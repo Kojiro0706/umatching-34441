@@ -43,6 +43,11 @@
           <%= f.text_field :horse, class: :form__text, id:"user_horse" %>
         </div>
 
+       <div class="field">
+         <%= f.label :image, "プロフィール画像" %><br />
+         <%= f.file_field :image, id:"user_image" %>
+       </div>
+
         <div class="actions">
           <%= f.submit "SIGN UP", class: :form__btn  %>
         </div>
