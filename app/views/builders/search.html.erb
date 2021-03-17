@@ -14,16 +14,16 @@
         <% if @results.length !=0 %>
         <% @results.each do |result| %>
           <div class="card">
+          <a class="card__user">
+              <%= result.user.name%></a>
           <a class="card__img">
             <%= image_tag(result.image)%></a>
             <div class="card__body">
             <a class="card__title">
             <%=result.title%></a>
             <p class="card__summary">
-              <%= "Category:#{result.category.name}"%>
+              <%= result.category.name%>
             </p>
-            <a class="card__user">
-              <%= result.user.name%></a>
               </div>
             </div>
         <% end %>
