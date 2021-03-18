@@ -7,8 +7,8 @@
       <%= link_to @builder.user.name, user_path(@builder.user), class: :builder__user %>
       <% if @builder.user.id == current_user.id%>
         <div class="builder__manage">
-          <%= link_to "編集する", edit_builder_path(@builder.id), class: :builder__btn %>
-          <%= link_to "削除する", builder_path(@builder.id),method: :delete, class: :builder__btn %>
+          <%= link_to "編集", edit_builder_path(@builder.id), class: :builder__btn %>
+          <%= link_to "削除", builder_path(@builder.id),method: :delete, class: :builder__btn %>
         </div>
       <% end %>
       <div class="builder__image">
@@ -16,7 +16,7 @@
       </div>
       <div class="builder__body">
         <div class="builder__detail">
-          <p class="detail__title">説明</p>
+          <p class="detail__title"></p>
           <p class="detail__message">
             <%= @builder.description %>
           </p>
@@ -43,7 +43,7 @@
         <ul class="comments_lists" id='comments' >
           <% @comments.reverse_each do |comment| %>
             <li class="comments_list">
-              <%= link_to comment.user.name, user_path(@builder.user), class: :comment_user %>
+              <%= link_to comment.user.name, user_path(comment.user), class: :comment_user %>
               <%= comment.text%>
               <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S')%>
             </li>
