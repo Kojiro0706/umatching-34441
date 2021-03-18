@@ -5,6 +5,7 @@ ja:
        name: 名前
        profile: プロフィール
        history: 馬女歴
+       image: プロフィール画像
      builder:
        title: タイトル
        description: 説明

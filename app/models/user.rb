@@ -5,11 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
-  validates :name
-  validates :profile
-  validates :history
-  validates :password, format: { with: /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{6,}\z/ }
-  validates :image
+    validates :name
+    validates :profile
+    validates :history
+    validates :password, format: { with: /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{6,}\z/ }
+    validates :image
   end
   has_many :builders
   has_many :comments, dependent: :destroy

@@ -8,11 +8,12 @@ class CommentsController < ApplicationController
     else
       @builders = @comment.builder
       @comments = @builder.comments
-      render "builders/show"
+      render 'builders/show'
     end
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id, builder_id: params[:builder_id])
   end

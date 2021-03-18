@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :builder do
-    title {'あいうえお'}
-    description {'あいうえおかきくけこ'}
-    category_id {2}
-    place {'競馬場'}
+    title { 'あいうえお' }
+    description { 'あいうえおかきくけこ' }
+    category_id { 2 }
+    place { '競馬場' }
     association :user
 
     after(:build) do |builder|
