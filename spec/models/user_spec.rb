@@ -4,6 +4,7 @@ RSpec.describe User, type: :model do
   describe 'ユーザー新規登録' do
     before do
       @user = FactoryBot.build(:user)
+      sleep 0.1
     end
     context 'ユーザーが保存できる場合' do
       it '全て適切に入力されていれば登録できること' do
@@ -77,6 +78,12 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('馬女歴を入力してください')
       end
+      it 'プロフィール画像画像が空だと登録できないこと' do
+        @user.image = nil
+        @user.valid?
+        expect(@user.errors.full_messages).to include('プロフィール画像を入力してください')
+      end
     end
   end
 end
+

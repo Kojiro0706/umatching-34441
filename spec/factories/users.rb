@@ -7,5 +7,9 @@ FactoryBot.define do
     profile               { 'あいうえお' }
     history               { 1 }
     horse                 { 'カキクケコ' }
+  
+    after(:build) do |user|
+      user.image.attach(io: File.open('public/images/test1.png'), filename: 'test1.png')
+    end
   end
 end
