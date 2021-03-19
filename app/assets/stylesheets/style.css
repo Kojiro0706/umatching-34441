@@ -40,12 +40,12 @@ a {
 /* ヘッダー */
 
 .main{
-  background-image: url("background2.jpeg");
+  background-image:url('background2.jpeg');
 }
 .header {
   background-color: #e2e2e2;
   padding: 20px 0 40px 0;
-  background-image: url("background.jpg");
+  background-image:url('background.jpg');
 }
 .inner {
   width: 1024px;
