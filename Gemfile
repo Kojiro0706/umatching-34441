@@ -63,3 +63,4 @@ gem 'factory_bot_rails'
 gem 'faker'
 gem 'ransack'
 gem 'rails-i18n'
+gem "aws-sdk-s3", require: false
