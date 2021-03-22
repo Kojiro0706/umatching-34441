@@ -34,6 +34,7 @@ https://umatching-34441.herokuapp.com/
 **`11.ヘッダ-の「DATABASE」や「HORSECLUB」をクリックすると外部リンクに遷移する。`**  
 **`・競走馬に関する情報サイトの閲覧が可能`**  
 **`・競走馬の一口馬主クラブのサイトが閲覧可能`**  
+![6343c6f34f3e52215dc4d63032801f2f](https://user-images.githubusercontent.com/78080715/111993133-99959780-8b59-11eb-8866-68e95deadd12.gif)
 
  
 
