@@ -12,7 +12,7 @@
        <%if user_signed_in? %>
         <div class="greeting">
           <%= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>
-          <%= "がログイン中です!!" %>
+          <%= "がログイン中です!" %>
         </div> 
        <%end%>
     </div>

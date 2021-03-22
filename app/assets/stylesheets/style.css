@@ -227,6 +227,7 @@ li.menu__single:hover ul.menu__second-level {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
 }
+
 #user_history{
   width:30px;
 }
@@ -241,14 +242,14 @@ li.menu__single:hover ul.menu__second-level {
 }
 .page-heading {
   font-size: 30px;
-  margin-bottom: 28px;
+  margin: 30px 0;
 }
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  min-height: calc(100vh - 161px);
+  min-height: calc(100vh - 200px);
   text-align:center;
 }
 .card {
@@ -293,6 +294,8 @@ li.menu__single:hover ul.menu__second-level {
   padding-top: 30px;
   background-image:url(background3.jpeg);
   width:100%;
+  margin-top: 20px;
+  border-radius:30px;
 }
 .builder__hedding{
   font-size: 24px;
@@ -311,6 +314,7 @@ li.menu__single:hover ul.menu__second-level {
   margin: 0 auto;
   padding: 16px 0;
   width: 80%;
+  text-align: center;
 }
 .builder__image img{
   border-radius:20%;
@@ -351,8 +355,9 @@ li.menu__single:hover ul.menu__second-level {
 .builder__comments{
   background-color: #e8e8e8;
   padding: 20px;
-  margin: 28px 0 40px 0;
+  margin: 28px 0 20px 0;
   background-image: url("background.jpg");
+  border-radius: 0 0 30px 30px;
 }
 
 .comments_lists{
@@ -423,6 +428,10 @@ li.menu__single:hover ul.menu__second-level {
 .user__image img{
   border-radius:20%;
   max-height: 350px;
+}
+/* 検索ページ */
+.search__hedding{
+  margin: 20px 0;
 }
 /* フッター */
 

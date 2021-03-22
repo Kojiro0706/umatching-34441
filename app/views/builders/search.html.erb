@@ -1,12 +1,6 @@
 <main class="main">
   <div class="inner">
-    <%if user_signed_in? %>
-        <div class="greeting">
-          <%= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>
-          <%= "がログイン中です!!" %>
-        </div> 
-      <%end%>
-      <h1>
+      <h1 class="search__hedding">
         検索結果/SERACH RESULTS
       </h1>
       <%# 検索結果の個数で条件分岐 %>
@@ -31,6 +25,5 @@
         該当する投稿はありません
         <% end %>
       </div>
-      <%= link_to 'トップページへ戻る', root_path %>
   </div>
 </main>
