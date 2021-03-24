@@ -1,16 +1,16 @@
 require 'rails_helper'
 def basic_pass(path)
-  username = ENV["BASIC_AUTH_USER"]
-  password = ENV["BASIC_AUTH_PASSWORD"]
+  username = ENV['BASIC_AUTH_USER']
+  password = ENV['BASIC_AUTH_PASSWORD']
   visit "http://#{username}:#{password}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}#{path}"
 end
 
 RSpec.describe '新規投稿', type: :system do
   before do
-    @user= FactoryBot.create(:user)
-    @builder= FactoryBot.build(:builder)
+    @user = FactoryBot.create(:user)
+    @builder = FactoryBot.build(:builder)
   end
-  context '投稿ができるとき'do
+  context '投稿ができるとき' do
     it 'ログインしたユーザーは新規投稿できる' do
       # ログインする
       basic_pass new_user_session_path
@@ -27,16 +27,16 @@ RSpec.describe '新規投稿', type: :system do
       fill_in '説明', with: @builder.description
       select '雑談', from: 'builder[category_id]'
       fill_in 'よく行く競馬場', with: @builder.place
-      attach_file '投稿画像', "public/images/test1.png"
+      attach_file '投稿画像', 'public/images/test1.png'
       # 送信するとTweetモデルのカウントが1上がることを確認する
-      expect{
+      expect do
         find('input[name="commit"]').click
-      }.to change { Builder.count }.by(1)
+      end.to change { Builder.count }.by(1)
       # トップページに遷移することを確認する
       expect(current_path).to eq(root_path)
     end
   end
-  context '投稿ができないとき'do
+  context '投稿ができないとき' do
     it 'ログインしていないと新規投稿ページに遷移できない' do
       # トップページに遷移する
       visit root_path
@@ -74,9 +74,9 @@ RSpec.describe '投稿編集', type: :system do
       fill_in 'builder_description', with: "#{@builder1.description}+編集"
       fill_in 'builder_place', with: "#{@builder1.place}+編集"
       # 編集してもTweetモデルのカウントは変わらないことを確認する
-      expect{
+      expect  do
         find('input[name="commit"]').click
-      }.to change { Builder.count }.by(0)
+      end.to change { Builder.count }.by(0)
       # 詳細画面に遷移したことを確認する
       expect(page).to have_content(@builder1.title)
     end
@@ -96,20 +96,20 @@ RSpec.describe '投稿編集', type: :system do
     it 'ログインしていないと投稿のの編集画面には遷移できない' do
       # トップページにいる
       visit root_path
-       # 詳細ページへのリンクが有ることを確認する
-       expect(page).to have_content(@builder1.title)
-       # 詳細ページへ遷移する
-       visit builder_path(@builder1.id)
-       # 投稿1に「編集」ボタンがあることを確認する
-       expect(page).to have_no_content('編集')
-       # トップページにいる
-       visit root_path
-       # 詳細ページへのリンクが有ることを確認する
-       expect(page).to have_content(@builder2.title)
-       # 詳細ページへ遷移する
-       visit builder_path(@builder2.id)
-       # 投稿2に「編集」ボタンがあることを確認する
-       expect(page).to have_no_content('編集')
+      # 詳細ページへのリンクが有ることを確認する
+      expect(page).to have_content(@builder1.title)
+      # 詳細ページへ遷移する
+      visit builder_path(@builder1.id)
+      # 投稿1に「編集」ボタンがあることを確認する
+      expect(page).to have_no_content('編集')
+      # トップページにいる
+      visit root_path
+      # 詳細ページへのリンクが有ることを確認する
+      expect(page).to have_content(@builder2.title)
+      # 詳細ページへ遷移する
+      visit builder_path(@builder2.id)
+      # 投稿2に「編集」ボタンがあることを確認する
+      expect(page).to have_no_content('編集')
     end
   end
   context '投稿が削除ができるとき' do
@@ -126,9 +126,9 @@ RSpec.describe '投稿編集', type: :system do
       # 投稿1に「削除」ボタンがあることを確認する
       expect(page).to have_content('削除')
       # 投稿を削除するとレコードの数が1減ることを確認する
-      expect{
+      expect do
         find_link('削除').click
-      }.to change { Builder.count }.by(-1)
+      end.to change { Builder.count }.by(-1)
       # トップページに遷移する
       visit root_path
     end
@@ -194,7 +194,7 @@ RSpec.describe '詳細ページ', type: :system do
       expect(page).to have_content(@builder.title)
       # 詳細ページへ遷移する
       visit builder_path(@builder.id)
-      #ログイン画面に遷移する
+      # ログイン画面に遷移する
       visit user_session_path
     end
   end
