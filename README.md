@@ -6,6 +6,9 @@
 
 # デプロイ後のURL
 https://umatching-34441.herokuapp.com/
+# Basic認証
+- Basic認証ID：test  
+- Basic認証PASS：0000
 # テスト用アカウント
 - name:テストユーザー1
 - email:test@test.com
