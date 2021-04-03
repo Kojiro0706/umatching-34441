@@ -286,7 +286,7 @@ li.menu__single:hover ul.menu__second-level {
 }
 .index__header{
   text-align:center;
-  padding-top: 30px;
+  padding: 30px;
 }
 /* 詳細ページ */
 .builder__wrapper{
