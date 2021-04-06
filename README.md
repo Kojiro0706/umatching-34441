@@ -1,19 +1,19 @@
-# **UmajoUmatching**
+# :horse:**UmajoUmatching**
 
 # アプリケーション概要
 ## 馬や競馬好きの女性の方に特化した投稿掲示板交流サイト  
 馬や競馬に興味のある方々が気軽に利用でき、交流を深められるアプリケーションです。投稿を通して馬に関する雑談や週末の競馬予想を始め、一緒に競馬場に行く人を募集することができ、投稿の詳細ページでユーザー同士でライブチャットを行うことが出来る。
 
-# デプロイ後のURL
+# :globe_with_meridians:デプロイ後のURL
 https://umatching-34441.herokuapp.com/
-# Basic認証
+# :unlock:Basic認証
 - Basic認証ID：test  
 - Basic認証PASS：0000
-# テスト用アカウント
+# :raising_hand:テスト用アカウント
 - name:テストユーザー1
 - email:test@test.com
 - password:ppp000
-# 利用方法・DEMO
+# :clapper:利用方法・DEMO
 **`1.アクセスするとトップページに遷移する。`**  
 **`2.ヘッダーの「LOGIN」ボタンをクリックし、ログインページに遷移する。`**  
 **`3.上記テスト用アカウントにてログインすると一覧画面に遷移する。`**  
@@ -41,8 +41,9 @@ https://umatching-34441.herokuapp.com/
 
  
 
-# 目指した課題解決
+# :eyes:目指した課題解決
 女性のみにターゲットを絞り、馬や競走馬に興味があるが一歩踏み出せない方と競馬場にも観戦に訪れるコアなファンの方同士を繋ぎ活発に交流させ、競馬場に足を運んでもらうことが出来る。そして、競馬場の入場者の女性の比率を上げることで、競馬=ギャンブルという世間のイメージを変化させ、より魅力的なエンターテイメントだということを知ってもらうことが出来る。
+
 # 機能一覧
 | 機能                    | 概要                                |
 | -----------------------|-------------------------------------|
@@ -58,7 +59,7 @@ https://umatching-34441.herokuapp.com/
 | テスト機能              |単体・結合テスト機能の導入                |
 
 
-# テーブル設計
+# :watch:テーブル設計
 ## usersテーブル
 
 | Column    | Type   | Options                |
@@ -103,7 +104,7 @@ https://umatching-34441.herokuapp.com/
 - belongs_to : user
 - belongs_to : comment
 
-# ローカルでの動作方法
+# :speech_balloon: ローカルでの動作方法
 git clone https://github.com/Kojiro0706/umatching-34441  
 $ cd umatching-34441  
 $ bundle install  
