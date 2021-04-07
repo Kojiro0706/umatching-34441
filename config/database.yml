@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: umatching_34441_production
-  username: umatching_34441
-  password: <%= ENV['UMATCHING_34441_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
