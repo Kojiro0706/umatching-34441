@@ -120,5 +120,5 @@ $ rails s
 ・JavaScript  
 ・gem 3.0.3  
 ・heroku7.50.0  
-・AWS(S3)  
+・AWS(EC2,S3)  
 ・RSpec
