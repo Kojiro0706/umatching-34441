@@ -120,7 +120,6 @@ $ rails s
 ・Rails 6.0.3.6  
 ・MySQL 5.6.50  
 ・JavaScript  
-・gem 3.0.3
-・heroku7.50.0
-・AWS(EC2,S3)  
+・gem 3.0.3  
+・AWS(EC2,S3)    
 ・RSpec
