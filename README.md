@@ -5,7 +5,7 @@
 馬や競馬に興味のある方々が気軽に利用でき、交流を深められるアプリケーションです。投稿を通して馬に関する雑談や週末の競馬予想を始め、一緒に競馬場に行く人を募集することができ、投稿の詳細ページでユーザー同士でライブチャットを行うことが出来る。
 
 # :globe_with_meridians:デプロイ後のURL
-https://umatching-34441.herokuapp.com/
+http://54.178.138.48/
 # :unlock:Basic認証
 - Basic認証ID：test  
 - Basic認証PASS：0000
